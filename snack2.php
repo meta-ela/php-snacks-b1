@@ -11,7 +11,6 @@ Se tutto è ok stampare “Accesso riuscito”, altrimenti “Accesso negato”
 <?php
 // Passare come parametri GET name, mail e age
 $email = key_exists("email", $_GET) ? trim($_GET["email"]) : false;
-
 if (!$email) {
     echo "email assente";
 } else {
@@ -20,12 +19,10 @@ if (!$email) {
     if(strpos( $email, "@") && strpos($email, ".")) {
         $validEmail = true;
     }
-
     var_dump($validEmail);
 }
 
 $name = key_exists("name", $_GET) ? trim($_GET["name"]) : false;
-
 if (!$name) {
     echo "nome assente";
 } else {
@@ -34,8 +31,19 @@ if (!$name) {
     if(strlen($name) > 3) {
         $validName = true;
     }
-
     var_dump($validName);
+}
+
+$age = key_exists("age", $_GET) ? trim($_GET["age"]) : false;
+if (empty($age)) {
+    echo "età assente";
+} else {
+    // che age sia un numero
+    $validAge = false;
+    if(is_numeric($age)) {
+        $validAge = true;
+    }
+    var_dump($validAge);
 }
 
 ?>
