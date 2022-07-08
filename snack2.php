@@ -19,31 +19,31 @@ if (!$email) {
     if(strpos( $email, "@") && strpos($email, ".")) {
         $validEmail = true;
     }
-    var_dump($validEmail);
+    /* var_dump($validEmail); */
 }
-
+echo "<br>";
 $name = key_exists("name", $_GET) ? trim($_GET["name"]) : false;
 if (!$name) {
-    echo "nome assente";
+    echo "name assente";
 } else {
     // name sia più lungo di 3 caratteri
     $validName = false;
     if(strlen($name) > 3) {
         $validName = true;
     }
-    var_dump($validName);
+    /* var_dump($validName); */
 }
-
+echo "<br>";
 $age = key_exists("age", $_GET) ? trim($_GET["age"]) : false;
 if (empty($age)) {
-    echo "età assente";
+    echo "age assente";
 } else {
     // che age sia un numero
     $validAge = false;
     if(is_numeric($age)) {
         $validAge = true;
     }
-    var_dump($validAge);
+    /* var_dump($validAge); */
 }
 
 ?>
@@ -60,6 +60,13 @@ if (empty($age)) {
     <title>Snack2</title>
 </head>
 <body>
-    
+<!-- Se tutto è ok stampare “Accesso riuscito”, altrimenti “Accesso negato” -->
+    <div class="container">
+        <?php if($validAge && $validEmail && $validName) { ?>
+            <div class="alert alert-success">accesso consentito</div>
+        <?php } else{ ?>
+            <div class="alert alert-danger">accesso non consentito</div>
+        <?php } ?>
+    </div>
 </body>
 </html>
