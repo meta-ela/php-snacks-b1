@@ -17,38 +17,38 @@ $teams = [
     [
         "hostTeam" => "Olimpia Milano",
         "hostedTeam" => "Cantù",
-        "hostTeamScore" => "55",
-        "hostedTeamScore" => "60"
+        "hostTeamScore" => rand(1, 100),
+        "hostedTeamScore" => rand(1, 100),
     ],
     [
         "hostTeam" => "AC Picchia",
         "hostedTeam" => "AS Intomatici",
-        "hostTeamScore" => "76",
-        "hostedTeamScore" => "60"
+        "hostTeamScore" => rand(1, 100),
+        "hostedTeamScore" => rand(1, 100),
     ],
     [
         "hostTeam" => "Sailor Rum",
         "hostedTeam" => "Cantù",
-        "hostTeamScore" => "33",
-        "hostedTeamScore" => "62"
+        "hostTeamScore" => rand(1, 100),
+        "hostedTeamScore" => rand(1, 100),
     ],
     [
         "hostTeam" => "Le scarpe della LIDL",
         "hostedTeam" => "Atletico ma non troppo",
-        "hostTeamScore" => "85",
-        "hostedTeamScore" => "20"
+        "hostTeamScore" => rand(1, 100),
+        "hostedTeamScore" => rand(1, 100),
     ],
     [
         "hostTeam" => "Slam Drunk",
         "hostedTeam" => "Team Broglio",
-        "hostTeamScore" => "23",
-        "hostedTeamScore" => "89"
+        "hostTeamScore" => rand(1, 100),
+        "hostedTeamScore" => rand(1, 100),
     ],
     [
         "hostTeam" => "Sdeng on Tour",
         "hostedTeam" => "Fun Cool",
-        "hostTeamScore" => "65",
-        "hostedTeamScore" => "40"
+        "hostTeamScore" => rand(1, 100),
+        "hostedTeamScore" => rand(1, 100),
     ],
 ];
 
@@ -69,30 +69,30 @@ $teams = [
 
     <div class="container">
         <h1 class="text-center text-uppercase text-primary mb-3">basketball third tournament match results</h1>
-        <div class="row row-cols-3">
+        <div class="row row-cols-3 g-3">
             <!-- Stampiamo a schermo tutte le partite con questo schema -->
             <!-- ciclo for php -->
-            <!-- <?php
-                for($i = 0; $i < count($teams); $i++) {
+            <?php for($i = 0; $i < count($teams); $i++){
                     $results = $teams[$i];
-                }
-            ?>
+                ?>
                 <div class="col">
-                <div class="card">
-                    <div> <strong><?php echo $results["hostTeam"]?></strong> - <strong><?php echo $results["hostedTeam"]?></strong></div>
-                    <div> <strong><?php echo $results["hostTeamScore"]?></strong> - <strong><?php echo $results["hostedTeamScore"]?></strong></div>
+                    <div class="card text-center h-100">
+                        <div> <strong><?php echo $results["hostTeam"]?></strong> - <strong><?php echo $results["hostedTeam"]?></strong></div>
+                        <div> <strong><?php echo $results["hostTeamScore"]?></strong> - <strong><?php echo $results["hostedTeamScore"]?></strong></div>
+                    </div>
                 </div>
-                </div> -->
-            
+            <?php } ?>
+
+            <!-- 
             <?php for($i = 0; $i < count($teams); $i++){
                 ?>
                 <div class="col">
-                    <div class="card text-center mb-4 p-3">
+                    <div class="card text-center h-100">
                         <div> <strong><?php echo $teams[$i]["hostTeam"]?></strong> - <strong><?php echo $teams[$i]["hostedTeam"]?></strong></div>
                         <div> <strong><?php echo $teams[$i]["hostTeamScore"]?></strong> - <strong><?php echo $teams[$i]["hostedTeamScore"]?></strong></div>
                     </div>
                 </div>
-            <?php } ?>
+            <?php } ?> -->
         </div>
     </div>
 </body>

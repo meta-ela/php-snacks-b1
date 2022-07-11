@@ -16,7 +16,7 @@ if (!$email) {
 } else {
     // mail contenga un punto e una chiocciola
     $validEmail = false;
-    if(strpos( $email, "@") && strpos($email, ".")) {
+    if(strstr( $email, "@") && strstr($email, ".")) {
         $validEmail = true;
     }
     /* var_dump($validEmail); */
@@ -46,6 +46,9 @@ if (empty($age)) {
     /* var_dump($validAge); */
 }
 
+// meglio salvare in una sola variabile, le variabili con i dati corretti
+// richiamare questa variabile in html
+$dataValid = $validAge && $validEmail && $validName;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -62,7 +65,7 @@ if (empty($age)) {
 <body>
 <!-- Se tutto è ok stampare “Accesso riuscito”, altrimenti “Accesso negato” -->
     <div class="container">
-        <?php if($validAge && $validEmail && $validName) { ?>
+        <?php if($dataValid) { ?>
             <div class="alert alert-success">accesso consentito</div>
         <?php } else{ ?>
             <div class="alert alert-danger">accesso non consentito</div>

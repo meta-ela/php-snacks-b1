@@ -12,6 +12,19 @@ shuffle($random_number_array );
 $random_number_array = array_slice($random_number_array ,0,15);
 
 var_dump($random_number_array);
+
+
+
+$array = [];
+while(count($array) < 15){
+    $numbers = rand(1, 100);
+    
+    if(!in_array($numbers, $array)){
+        $array[] = $numbers;
+    }
+}
+var_dump($array);
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
